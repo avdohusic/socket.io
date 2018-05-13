@@ -1,0 +1,78 @@
+<script src="socket.io.slim.js"></script>
+<script>
+    var socket = io.connect('http://localhost:2020', {
+        transports: ['websocket', 'polling', 'flashsocket'],
+        query: "token=NjYwMWRmYjEzMGM1ZDdkYzRjMTBiOTYyNTkzYmE0MzZmY2FkZTFkMmQyNmE0NWMyODY0YTVhYmVlYjdjZWNiNMnPDH/18GMKpYdFkSpzwjwWym2epH2L/exGuu4AIyqJrpfFiS4DpK5wB6Qrrhhqvkscekq0l9oux2joF8ESWbWK9NWJEQVo7V2EXkya7hDfWdWY506xCoXXBZQh5+VUtuLmDOdNlcle+0j/fgk8YFADzCjQGrbgRLAkJTJNclfjJBjXYg0SHtvV/pe4sJPdtsUHT+NeV73lu/wrCHBQw+2kSU7Ib9bo0IiA/F6hY7x4Oi6S/hL2NS0yU9hFeeWCjiGIOE9GorhogG/1IAsf+ce5GPlVv28T3xOAPzG1V2qLaQM3nllLROn9bBElJeVmUo9b2mLFDAJllhZ6HVlAP1u1YoE7xTAbb8dYgrksJwQydu2xx2GzxL/6Pnp3RM6fcKCUsFX0h7tDi9f/tloGePwvljZjvsmHuKxY0Leq1c9E"
+        query: "token=OGY0NjE0Y2U0MWZhOWNjMGJkODIzZmE5OTY4NDNlNjkwYzUyMTlmZWQxOTgyMzg4MmZhYzhmYTZhOWVmNjAzMdIx86xm0tsPMmfoOWO5R+en8h/6JHWa8DfyiNlkeIA4OQyczi5BjPaLh+iAaG9hslvGKRE5/Z62hAYL1uSk1ba0Bi+f2YDScLykVNHTakqLV7jT7DSUB2P/EBH30zgg9E30LZZBwRrD4gG2ZvIDUFFy8zxC42jn7+6nmmZGbB1wFiySzdAAHW0UOU4zoHheNk40yJHpw9TvEJD57acYOy5aSzdj+ceDy9COE8G6jYA98zkWob3oJFtfzECGD/gYr4DzI5TB5UIT3snC2V5P/FWjr6bKvo5tmsTz0g/2+hoPSfTKk7ukgh8NlySrIZWtEsk4GdvhAOGhvCrd4nvH6bTNG2oazQJgcXAfDNwcQ4TfVXDqJ5ApSXwEQqt4rBwWHin+gi/i/zktFVx56BrqGHpQvEXRjB4VxMUGDIjAuw1x4wFDYJPGeC5Y5TuJpdjg2A=="
+    });
+
+    socket.on('connect', function () {
+    });
+    socket.on('event', function (data) {
+    });
+    socket.on('disconnect', function () {
+    });
+
+    socket.on('remote-command', function (data) {
+        document.getElementById("events").innerHTML = document.getElementById("events").innerHTML + "<br>" + data.command;
+    });
+
+    function emitHeartbeat() {
+        socket.emit('heartbeat', 'ack', function (data) {
+            document.getElementById("events").innerHTML = document.getElementById("events").innerHTML + "<br>" + data;
+        });
+    }
+
+    function emitConnect() {
+        socket.connect();
+    }
+
+    function emitClose() {
+        socket.close();
+    }
+
+    function emitDisconnect() {
+        socket.disconnect();
+    }
+
+    function emitAdsBanner() {
+        socket.emit('ads-banner', {
+            'mongo_id': "5acefe1658e14d9ce2255fcf",
+            "closed": false,
+            "clicked": true
+        });
+    }
+
+    function emitAdsVideo() {
+        socket.emit('ads-video', {
+            'mongo_id': "5acf272358e14db964117f0d",
+            "closed": false,
+            "clicked": false,
+            "duration": 200,
+            "retention_time": 200
+        });
+    }
+
+</script>
+<div style="width: 100%; margin-top: 10px">
+    <div style="float: left;padding-left: 30px; width: 20%">
+        <b>EMITS:</b><br><br>
+        <a href="#" onclick="emitHeartbeat();return false;">Emit Heartbeat</a><br><br>
+        <a href="#" onclick="emitAdsBanner();return false;">Emit ADS Banner</a><br><br>
+        <a href="#" onclick="emitAdsVideo();return false;">Emit ADS Video</a><br><br>
+    </div>
+
+    <div style="float: left;width: 20%">
+        <b>MANAGE:</b><br><br>
+        <a href="#" onclick="emitConnect();return false;">Connect</a><br><br>
+        <a href="#" onclick="emitDisconnect();return false;">Disconnect</a><br><br>
+        <a href="#" onclick="emitClose();return false;">Close</a><br><br>
+    </div>
+
+    <div style="float: left;width: 100%;padding-left: 30px">
+        <b>EVENTS:</b>
+        <p id="events"></p>
+    </div>
+
+</div>
+

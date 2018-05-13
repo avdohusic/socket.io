@@ -1,0 +1,7 @@
+/dist/*
+/node_modules/*
+/MaxmindDb/*
+/.idea/*
+package-lock.json
+access.log
+error.log

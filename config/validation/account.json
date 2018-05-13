@@ -1,0 +1,77 @@
+{
+  "account_id": {
+    "required": true,
+    "type": "number"
+  },
+  "account_profile_id": {
+    "required": true,
+    "type": "number"
+  },
+  "age": {
+    "required": false,
+    "type": "number",
+    "default": null
+  },
+  "sex": {
+    "required": false,
+    "type": "string",
+    "default": null
+  },
+  "ip_address": {
+    "required": true,
+    "type": "string"
+  },
+  "country_code": {
+    "required": true,
+    "type": "string"
+  },
+  "country": {
+    "required": true,
+    "type": "string"
+  },
+  "city": {
+    "required": true,
+    "type": "string"
+  },
+  "time_zone": {
+    "required": true,
+    "type": "string"
+  },
+  "loc": {
+    "required": true,
+    "type": "object"
+  },
+  "accuracy_radius": {
+    "required": true,
+    "type": "number"
+  },
+  "user_agent": {
+    "required": false,
+    "type": "string",
+    "default": null
+  },
+  "device_type": {
+    "required": false,
+    "type": "string",
+    "default": null
+  },
+  "device_model": {
+    "required": false,
+    "type": "string",
+    "default": null
+  },
+  "app_ver": {
+    "required": false,
+    "type": "string",
+    "default": null
+  },
+  "isp": {
+    "required": false,
+    "type": "string",
+    "default": null
+  },
+  "subscription_id": {
+    "required": true,
+    "type": "number"
+  }
+}

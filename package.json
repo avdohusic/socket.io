@@ -1,0 +1,41 @@
+{
+  "name": "socket-server",
+  "version": "1.0.0",
+  "description": "Socket Server login with Token",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "gulp scripts",
+    "watch": "gulp watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "debug": "^3.1.0",
+    "forever": "^0.15.3",
+    "iso-8859-2": "^1.0.0",
+    "maxmind": "^2.5.0",
+    "mongodb": "^3.0.5",
+    "mysql": "^2.15.0",
+    "neo4j": "^2.0.0-RC2",
+    "neo4j-driver": "^1.5.3",
+    "nodejs-aes256": "^1.0.1",
+    "sendgrid": "^5.2.3",
+    "sha256": "^0.2.0",
+    "socket.io": "^2.0.4",
+    "socket.io-emitter": "^3.1.1",
+    "socket.io-redis": "^5.2.0",
+    "tsc": "^1.20150623.0",
+    "typedjson-npm": "^0.1.7",
+    "typescript": "^2.8.1",
+    "uniqid": "^4.1.1",
+    "winston": "^3.0.0-rc4"
+  },
+  "devDependencies": {
+    "@types/winston": "^2.3.9",
+    "gulp": "^3.9.1",
+    "gulp-typescript": "^3.1.1"
+  }
+}

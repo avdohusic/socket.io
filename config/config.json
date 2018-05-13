@@ -1,0 +1,19 @@
+{
+  "port": 2020,
+  "pingTimeout": 5000,
+  "pingInterval": 4000,
+  "mongodb": {
+    "host": "mongodb://localhost",
+    "port": 27017,
+    "project": "socket"
+  },
+  "tokenKey": "ceciLPCZHxZEw4jPF1qS4YRXuUH9nLzQ",
+  "tokenSalt": "5CE415D6C501CDC9B1F7A792E5621E4304E296CEB5EFF9189CC61C1845CAA7BD",
+  "maxmindDbPath": "../MaxmindDb/GeoIP2-City.mmdb",
+  "neo4j": {
+    "enabled": true,
+    "url": "bolt://socket.tv:7687",
+    "user": "",
+    "password": ""
+  }
+}

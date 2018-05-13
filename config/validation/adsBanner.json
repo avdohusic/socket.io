@@ -1,0 +1,16 @@
+{
+  "mongo_id": {
+    "required": true,
+    "type": "string"
+  },
+  "clicked": {
+    "required": false,
+    "type": "number",
+    "default": 0
+  },
+  "closed": {
+    "required": false,
+    "type": "number",
+    "default": 0
+  }
+}
